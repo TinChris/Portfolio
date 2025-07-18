@@ -1,0 +1,197 @@
+*{
+  /* border: 0.5px solid gray; */
+  
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+:root{
+  --color-background1: rgb(240, 128, 114);
+  --color-background2: rgb(54, 112, 201);
+  --color-background3: rgb(152, 230, 190);
+  --color-background5: rgb(160, 163, 170);
+  --color-background4: rgb(54, 57, 63);
+  --color-text1: rgb(255, 250, 240);
+  --color-text2: rgb(54, 57, 63);
+  --color-text3: rgb(70, 90, 150);
+  
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper{
+  display: flex;
+  flex-direction: column;
+  
+}
+.nav{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: var(--color-background1);
+  color: var(--color-text1);
+  position: fixed;
+  left:0;
+  top:0;
+}
+.nav-list{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+li{
+  padding-right: 10px;
+  font-size: 18px;
+font-weight: 400;
+line-height: 1.5;
+letter-spacing: 0.02em;
+}
+a {
+  color: var(--color-text1);               /* Link-Farbe */
+  text-decoration: none;       /* Unterstreichung entfernen */
+  font-weight: 500;            /* etwas kräftiger, aber nicht fett */
+  transition: color 0.3s ease; /* sanfter Hover-Effekt */
+}
+
+a:hover,
+a:focus {
+  color: var(--color-text2); 
+  text-decoration: none; 
+}
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+ background: linear-gradient(-55deg, var(--color-background2) 0%, var(--color-background3) 100%);
+ height: 100vh;
+ width: 100%;
+ margin: 0;
+ padding: 0;
+ justify-content: center;
+ color: var(--color-text3);
+}
+#welcome-section h1{
+  font-size: 3rem;
+  text-align: center;
+}
+#welcome-section p{
+  display:flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.project-container {
+  width: 100%;
+  padding: 30px 10px;
+  background: linear-gradient(-90deg, var(--color-background4) 0%, var(--color-background5) 100%);
+  justify-content: center;
+  align-items: center;
+}
+.project-grid{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.5rem;
+
+  justify-content: center;  /* Zentriert alle Kacheln als Gruppe */
+}
+
+.project-tile {
+  aspect-ratio: 1 / 1;
+  /* Seitenverhältnis 1:1 – das sorgt dafür, dass die Kachel immer quadratisch bleibt. */
+  background-color: var(--color-background4); /* helles, freundliches Hintergrundgrün (du kannst es ändern) */
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  /* Diese drei Zeilen zentrieren den Inhalt innerhalb der Kachel sowohl vertikal als auch horizontal */
+  border-radius: 10px; /* abgerundete Ecken */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* leichter Schatten für etwas Tiefe */
+}
+
+.nav-footer{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: var(--color-background4);
+  color: var(--color-text1);
+  
+}
+.nav-list-footer{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.contact-container{
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: Consolas, monospace;
+  padding: 20px;
+  background: linear-gradient(-90deg, var(--color-background4) 0%, var(--color-background5) 100%);
+  color: var(--color-text1);
+   
+}
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 10px;
+  }
+
+  .nav-list li {
+    padding: 5px 0;
+  }
+
+  #welcome-section h1 {
+    font-size: 2rem;
+  }
+
+  #welcome-section p {
+    font-size: 1rem;
+  }
+
+  .project-tile a {
+    font-size: 1rem;
+  }
+}
+/* =========================== */
+/* 2. Mittelgroße Geräte       */
+/* (z. B. Tablets & kleine PCs) */
+/* =========================== */
+@media (max-width: 900px) {
+  .project-tile {
+    font-size: 1rem;
+  }
+
+  #welcome-section h1 {
+    font-size: 2.5rem;
+  }
+
+  #welcome-section p {
+    font-size: 1.2rem;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+}
+/* ======================== */
+/* 3. Große Geräte/Desktops */
+/* ======================== */
+@media (min-width: 1200px) {
+  #welcome-section h1 {
+    font-size: 4rem;
+  }
+
+  #welcome-section p {
+    font-size: 2rem;
+  }
+
+  .project-tile {
+    font-size: 1.3rem;
+  }
+
+  .contact-container {
+    font-size: 1.5rem;
+  }
+}
